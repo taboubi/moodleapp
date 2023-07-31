@@ -142,6 +142,11 @@ export class CoreConstants {
     static readonly MOD_ARCHETYPE_ASSIGNMENT = 2; // Assignment module archetype.
     static readonly MOD_ARCHETYPE_SYSTEM = 3; // System (not user-addable) module archetype.
 
+    // StudiUM site.
+    static readonly STUDIUM = 'studium';
+    static readonly STUDIUMFC = 'studiumfc';
+    static readonly CURRENT_STUDIUM_SITE = 'currentstudiumsite';
+
     // Config & environment constants.
     static readonly CONFIG = { ...envJson.config } as unknown as EnvironmentConfig; // Data parsed from config.json files.
     static readonly BUILD = envJson.build as unknown as EnvironmentBuild; // Build info.

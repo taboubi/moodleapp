@@ -246,19 +246,8 @@ export class CoreUrlUtilsProvider {
      * @param page Docs page to go to.
      * @returns Promise resolved with the Moodle docs URL.
      */
-    async getDocsUrl(release?: string, page: string = 'Mobile_app'): Promise<string> {
-        let docsUrl = 'https://docs.moodle.org/en/' + page;
-
-        if (release !== undefined) {
-            const version = CoreSites.getMajorReleaseNumber(release).replace('.', '');
-
-            // Check is a valid number.
-            if (Number(version) >= 24) {
-                // Append release number.
-                docsUrl = docsUrl.replace('https://docs.moodle.org/', 'https://docs.moodle.org/' + version + '/');
-            }
-        }
-
+    async getDocsUrl(release?: string, page?: string): Promise<string> {
+        const docsUrl = CoreConstants.CONFIG.docurl;
         try {
             let lang = await CoreLang.getCurrentLanguage();
             lang = CoreLang.getParentLanguage() || lang;

@@ -18,11 +18,14 @@
 <ion-content class="ion-padding">
     <div class="list-item-limited-width">
         <div class="ion-text-center ion-padding ion-margin-bottom core-login-site-logo" [class.hidden]="hasSites || enteredSiteUrl">
-            <img src="assets/img/login_logo.png" class="avatar-full login-logo" role="presentation" alt="">
+            <img src="assets/img/logo_login_studium.svg" class="avatar-full login-logo-light ion-margin-bottom" role="presentation" alt="">
+            <img src="assets/img/logo_login_studium_dark.svg" class="avatar-full login-logo-dark ion-margin-bottom" role="presentation"
+                alt="">
         </div>
-        <form [formGroup]="siteForm" (ngSubmit)="connect($event, siteForm.value.siteUrl)" *ngIf="!fixedSites && siteForm" #siteFormEl>
+        <form [formGroup]="siteForm" (ngSubmit)="connect($event, siteForm.value.siteUrl)"
+            *ngIf="(!fixedSites || (fixedSites && siteSelector == 'radio')) && siteForm" #siteFormEl>
             <!-- Form to input the site URL if there are no fixed sites. -->
-            <ng-container *ngIf=" siteSelector=='url'">
+            <ng-container *ngIf=" siteSelector ==='url'">
                 <ion-item>
                     <ion-label position=" stacked">
                         <h2>{{ 'core.login.siteaddress' | translate }}</h2>
@@ -32,7 +35,7 @@
                     </ion-input>
                 </ion-item>
             </ng-container>
-            <ng-container *ngIf="siteSelector != 'url'">
+            <ng-container *ngIf="siteSelector != 'url' && siteSelector != 'radio'">
                 <ion-item>
                     <ion-label position="stacked">
                         <h2>{{ 'core.login.siteaddress' | translate }}</h2>
@@ -81,8 +84,23 @@
                     </ion-button>
                 </ion-label>
             </ion-item>
-        </form>
+            <ion-list *ngIf="fixedSites && siteSelector == 'radio'" radio-group margin-vertical text-wrap
+                class="site-list ion-margin-bottom">
+                <ion-radio-group formControlName="siteUrl">
+                    <ion-item *ngFor="let site of fixedSites">
+                        <ion-label>{{site.name}}</ion-label>
+                        <ion-radio [value]="site.url" name="url" slot="end"></ion-radio>
+                    </ion-item>
+                </ion-radio-group>
+            </ion-list>
 
+            <ion-button class="ion-no-margin" *ngIf="fixedSites && siteSelector == 'radio'" expand="full" [disabled]="!siteForm.valid"
+                type="submit">
+                {{ 'core.login.connect' | translate }}
+            </ion-button>
+
+
+        </form>
         <ng-container *ngIf="fixedSites">
             <!-- Pick the site from a list of fixed sites. -->
             <ion-list *ngIf="siteSelector == 'list'">
@@ -110,11 +128,12 @@
             </ion-button>
         </ng-container>
 
-        <!-- Help. -->
+        <!-- Help.
         <ion-button class="ion-margin-top core-login-need-help core-button-as-link ion-text-wrap" (click)="showHelp()"
             aria-haspopup="dialog" expand="block" fill="clear">
             {{ 'core.needhelp' | translate }}
         </ion-button>
+        -->
     </div>
 </ion-content>
 

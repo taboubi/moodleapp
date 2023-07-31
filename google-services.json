@@ -1,42 +1,45 @@
 {
   "project_info": {
-    "project_number": "",
-    "firebase_url": "",
-    "project_id": "",
-    "storage_bucket": ""
+    "project_number": "1018486492851",
+    "firebase_url": "https://studium-production.firebaseio.com",
+    "project_id": "studium-production",
+    "storage_bucket": "studium-production.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:111111111111:android:1111111111111111",
+        "mobilesdk_app_id": "1:1018486492851:android:7835f82e35ceec32",
         "android_client_info": {
-          "package_name": "com.moodle.moodlemobile"
+          "package_name": "ca.umontreal.studiumprod"
         }
       },
       "oauth_client": [
         {
-          "client_id": "",
+          "client_id": "1018486492851-5tf0mvakbcrm606cjdmld620ili74mvb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": ""
-        },
-        {
-          "current_key": ""
+          "current_key": "AIzaSyBfYQ7qy8_IeE8hkQajuPdOfj1T5q-YPq4"
         }
       ],
       "services": {
-        "analytics_service": {
-          "status": 1
-        },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
-        },
-        "ads_service": {
-          "status": 2
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1018486492851-5tf0mvakbcrm606cjdmld620ili74mvb.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1018486492851-rvjspp2se1utrl1tfm44lkn19pjo2e0j.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ca.umontreal.studium",
+                "app_store_id": "1380735206"
+              }
+            }
+          ]
         }
       }
     }

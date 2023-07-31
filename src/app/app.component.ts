@@ -34,6 +34,7 @@ import { CoreDom } from '@singletons/dom';
 import { CorePlatform } from '@services/platform';
 import { CoreUrl } from '@singletons/url';
 import { CoreLogger } from '@singletons/logger';
+import { CoreConfig } from '@services/config';
 
 const MOODLE_SITE_URL_PREFIX = 'url-';
 const MOODLE_VERSION_PREFIX = 'version-';
@@ -57,6 +58,8 @@ export class AppComponent implements OnInit, AfterViewInit {
         const win = <any> window;
         CoreDomUtils.toggleModeClass('ionic5', true, { includeLegacy: true });
         this.addVersionClass(MOODLEAPP_VERSION_PREFIX, CoreConstants.CONFIG.versionname.replace('-dev', ''));
+        // Studium current site.
+        this.setStudiumCurrentSite();
 
         CoreEvents.on(CoreEvents.LOGOUT, async () => {
             // Unload lang custom strings.
@@ -207,6 +210,27 @@ export class AppComponent implements OnInit, AfterViewInit {
             this.logger.debug('Hide splash screen');
             SplashScreen.hide();
         });
+    }
+
+    /**
+     * Set dom StudiUM current site.
+     */
+    protected async setStudiumCurrentSite(): Promise<void> {
+        const currentsite = CoreConstants.STUDIUM;
+        CoreDomUtils.toggleModeClass(CoreConstants.STUDIUM, false);
+        CoreDomUtils.toggleModeClass(CoreConstants.STUDIUMFC, false);
+        CoreDomUtils.toggleModeClass(currentsite, true);
+        CoreConfig.set(CoreConstants.CURRENT_STUDIUM_SITE, currentsite);
+        const studiumcurrent = await CoreConfig.get(CoreConstants.CURRENT_STUDIUM_SITE, '');
+
+        if (studiumcurrent !== '') {
+            CoreDomUtils.toggleModeClass(CoreConstants.STUDIUM, false);
+            CoreDomUtils.toggleModeClass(CoreConstants.STUDIUMFC, false);
+            CoreDomUtils.toggleModeClass(studiumcurrent, true);
+        } else {
+            CoreDomUtils.toggleModeClass(CoreConstants.STUDIUM, true);
+            CoreConfig.set(CoreConstants.CURRENT_STUDIUM_SITE, CoreConstants.STUDIUM);
+        }
     }
 
     /**

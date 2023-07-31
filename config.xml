@@ -1,14 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget android-versionCode="42000" id="com.moodle.moodlemobile" ios-CFBundleVersion="4.2.0.0" version="4.2.0" versionCode="42000" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Moodle</name>
-    <description>Moodle official app</description>
-    <author email="mobile@moodle.com" href="http://moodle.com">Moodle Mobile team</author>
+
+<widget android-versionCode="42000" id="ca.umontreal.studiumprod" ios-CFBundleVersion="4.2.0.0" version="4.2.0" versionCode="42000" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>StudiUM mobile</name>
+    <description>StudiUM mobile se connecte aux plateformes d'apprentissage en ligne StudiUM et StudiUM FC de l'Université de Montréal.</description>
+    <author email="studium-soutien@umontreal.ca" href="https://studium.umontreal.ca">Université de Montréal – Montréal</author>
     <content src="index.html" />
     <access origin="*" />
     <access launch-external="yes" origin="tel:*" />
     <access launch-external="yes" origin="mailto:*" />
     <access launch-external="yes" origin="geo:*" />
-    <allow-navigation href="moodleappfs:*" />
+    <allow-navigation href="studiumappfs:*" />
     <allow-navigation href="cdvfile:*" />
     <allow-navigation href="content:*" />
     <allow-navigation href="data:*" />
@@ -27,7 +28,7 @@
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="AppendUserAgent" value="MoodleMobile 4.2.0 (42000)" />
+    <preference name="AppendUserAgent" value="studiummobile" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="ScrollEnabled" value="false" />
     <preference name="KeyboardDisplayRequiresUserAction" value="false" />
@@ -42,7 +43,7 @@
     <preference name="AndroidInsecureFileModeEnabled" value="true" />
     <preference name="CustomURLSchemePluginClearsAndroidIntent" value="true" />
     <preference name="iosPersistentFileLocation" value="Compatibility" />
-    <preference name="iosScheme" value="moodleappfs" />
+    <preference name="iosScheme" value="studiumappfs" />
     <preference name="WKWebViewOnly" value="true" />
     <preference name="WKFullScreenEnabled" value="false" />
     <preference name="AndroidXEnabled" value="true" />
@@ -59,6 +60,27 @@
         <preference name="AndroidWindowSplashScreenIconBackgroundColor" value="#FFFFFF" />
         <resource-file src="MainActivity.java" target="app/src/main/java/com/moodle/moodlemobile/MainActivity.java" />
         <resource-file src="google-services.json" target="app/google-services.json" />
+		<splash density="land-ldpi" src="resources/android/splash/drawable-land-ldpi-screen.png" />
+        <splash density="land-mdpi" src="resources/android/splash/drawable-land-mdpi-screen.png" />
+        <splash density="land-hdpi" src="resources/android/splash/drawable-land-hdpi-screen.png" />
+        <splash density="land-xhdpi" src="resources/android/splash/drawable-land-xhdpi-screen.png" />
+        <splash density="land-xxhdpi" src="resources/android/splash/drawable-land-xxhdpi-screen.png" />
+        <splash density="land-xxxhdpi" src="resources/android/splash/drawable-land-xxxhdpi-screen.png" />
+        <splash density="port-ldpi" src="resources/android/splash/drawable-port-ldpi-screen.png" />
+        <splash density="port-mdpi" src="resources/android/splash/drawable-port-mdpi-screen.png" />
+        <splash density="port-hdpi" src="resources/android/splash/drawable-port-hdpi-screen.png" />
+        <splash density="port-xhdpi" src="resources/android/splash/drawable-port-xhdpi-screen.png" />
+        <splash density="port-xxhdpi" src="resources/android/splash/drawable-port-xxhdpi-screen.png" />
+        <splash density="port-xxxhdpi" src="resources/android/splash/drawable-port-xxxhdpi-screen.png" />
+        <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="resources/android/icon/drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="resources/android/icon/drawable-xhdpi-icon.png" />
+        <icon density="xxhdpi" src="resources/android/icon/drawable-xxhdpi-icon.png" />
+        <icon density="xxxhdpi" src="resources/android/icon/drawable-xxxhdpi-icon.png" />
+        <resource-file src="resources/android/icon/drawable-ldpi-smallicon.png" target="app/src/main/res/mipmap-ldpi/smallicon.png" />
+        <resource-file src="resources/android/icon/drawable-xxhdpi-smallicon.png" target="app/src/main/res/mipmap-xxhdpi/smallicon.png" />
+        <resource-file src="resources/android/icon/drawable-xxxhdpi-smallicon.png" target="app/src/main/res/mipmap-xxxhdpi/smallicon.png" />
         <resource-file src="resources/android/icon/drawable-ldpi-smallicon.png" target="app/src/main/res/mipmap-ldpi/smallicon.png" />
         <resource-file src="resources/android/icon/drawable-mdpi-smallicon.png" target="app/src/main/res/mipmap-mdpi/smallicon.png" />
         <resource-file src="resources/android/icon/drawable-hdpi-smallicon.png" target="app/src/main/res/mipmap-hdpi/smallicon.png" />

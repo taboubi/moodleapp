@@ -33,5 +33,11 @@ npm-debug.log*
 /moodle.config.*.json
 !/moodle.config.example.json
 
-/src/assets/lang/*
 /src/assets/env.json
+
+config.xml
+google-services.json
+GoogleService-Info.plist
+studiummobile.keystore
+package.json
+package-lock.json
