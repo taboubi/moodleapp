@@ -32,6 +32,7 @@ import { CoreNavigator } from '@services/navigator';
 import { IonRefresher } from '@ionic/angular';
 import { ContextLevel } from '@/core/constants';
 import { CoreUtils } from '@services/utils/utils';
+import { CoreTextUtils } from '@services/utils/text';
 import { ADDON_COMPETENCY_SUMMARY_PAGE } from '@addons/competency/competency.module';
 import { CoreSwipeNavigationItemsManager } from '@classes/items-management/swipe-navigation-items-manager';
 import { CoreRoutedItemsManagerSourcesTracker } from '@classes/items-management/routed-items-manager-sources-tracker';
@@ -152,7 +153,7 @@ export class AddonCompetencyCompetencyPage implements OnInit, OnDestroy {
             this.competency.evidence.forEach((evidence) => {
                 if (evidence.descidentifier) {
                     const key = 'addon.competency.' + evidence.descidentifier;
-                    evidence.description = Translate.instant(key, { $a: evidence.desca });
+                    evidence.description = Translate.instant(key, { $a: CoreTextUtils.parseJSON(evidence.desca, null) });
                 }
             });
 
