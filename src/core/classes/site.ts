@@ -2697,6 +2697,8 @@ export type CoreSiteInfoResponse = {
     usercalendartype?: string; // Calendar typed used by the user.
     userissiteadmin?: boolean; // Whether the user is a site admin or not.
     theme?: string; // Current theme for the user.
+    cansortbytrimester?: boolean;
+    programscateid?: string;
 };
 
 /**

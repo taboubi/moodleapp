@@ -17,10 +17,12 @@ import { NgModule } from '@angular/core';
 import { CoreSharedModule } from '@/core/shared.module';
 import { CoreCoursesComponentsModule } from '@features/courses/components/components.module';
 import { AddonBlockMyOverviewComponent } from './myoverview/myoverview';
+import { AddonSortHelpModalComponent } from './sorthelpmodal/sorthelpmodal';
 
 @NgModule({
     declarations: [
         AddonBlockMyOverviewComponent,
+        AddonSortHelpModalComponent,
     ],
     imports: [
         CoreSharedModule,
@@ -28,6 +30,7 @@ import { AddonBlockMyOverviewComponent } from './myoverview/myoverview';
     ],
     exports: [
         AddonBlockMyOverviewComponent,
+        AddonSortHelpModalComponent,
     ],
 })
 export class AddonBlockMyOverviewComponentsModule {}
