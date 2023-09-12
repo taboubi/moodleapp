@@ -1,5 +1,4 @@
 <?xml version='1.0' encoding='utf-8'?>
-
 <widget android-versionCode="42000" id="ca.umontreal.studiumprod" ios-CFBundleVersion="4.2.0.0" version="4.2.0" versionCode="42000" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>StudiUM mobile</name>
     <description>StudiUM mobile se connecte aux plateformes d'apprentissage en ligne StudiUM et StudiUM FC de l'Université de Montréal.</description>
@@ -51,7 +50,6 @@
     <preference name="GradlePluginGoogleServicesVersion" value="4.3.10" />
     <preference name="GradlePluginKotlinVersion" value="1.7.21" />
     <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="GradlePluginKotlinVersion" value="1.7.10" />
     <feature name="StatusBar">
         <param name="ios-package" onload="true" value="CDVStatusBar" />
     </feature>
